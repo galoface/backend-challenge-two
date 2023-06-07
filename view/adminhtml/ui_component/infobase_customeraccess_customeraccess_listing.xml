@@ -1,0 +1,106 @@
+<?xml version="1.0" ?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+	<argument name="data" xsi:type="array">
+		<item name="js_config" xsi:type="array">
+			<item name="provider" xsi:type="string">infobase_customeraccess_customeraccess_listing.infobase_customeraccess_customeraccess_listing_data_source</item>
+		</item>
+	</argument>
+	<settings>
+		<spinner>infobase_customeraccess_customeraccess_columns</spinner>
+		<deps>
+			<dep>infobase_customeraccess_customeraccess_listing.infobase_customeraccess_customeraccess_listing_data_source</dep>
+		</deps>
+	</settings>
+	<dataSource name="infobase_customeraccess_customeraccess_listing_data_source" component="Magento_Ui/js/grid/provider">
+		<settings>
+			<storageConfig>
+				<param name="indexField" xsi:type="string">customeraccess_id</param>
+			</storageConfig>
+			<updateUrl path="mui/index/render"/>
+		</settings>
+		<aclResource>Infobase_CustomerAccess::CustomerAccess</aclResource>
+		<dataProvider name="infobase_customeraccess_customeraccess_listing_data_source" class="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+			<settings>
+				<requestFieldName>id</requestFieldName>
+				<primaryFieldName>customeraccess_id</primaryFieldName>
+			</settings>
+		</dataProvider>
+	</dataSource>
+	<listingToolbar name="listing_top">
+		<settings>
+			<sticky>true</sticky>
+		</settings>
+		<bookmark name="bookmarks"/>
+		<columnsControls name="columns_controls"/>
+		<filters name="listing_filters"/>
+		<paging name="listing_paging"/>
+	</listingToolbar>
+	<columns name="infobase_customeraccess_customeraccess_columns">
+		<selectionsColumn name="ids">
+			<settings>
+				<indexField>customeraccess_id</indexField>
+			</settings>
+		</selectionsColumn>
+		<column name="customeraccess_id">
+			<settings>
+				<filter>text</filter>
+				<sorting>asc</sorting>
+				<label translate="true">ID</label>
+			</settings>
+		</column>
+		<column name="customer_id">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">customer_id</label>
+			</settings>
+		</column>
+		<column name="customer_name">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">customer_name</label>
+			</settings>
+		</column>
+		<column name="customer_email">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">customer_email</label>
+			</settings>
+		</column>
+		<column name="access_time">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">access_time</label>
+			</settings>
+		</column>
+		<column name="device">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">device</label>
+			</settings>
+		</column>
+		<column name="city">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">city</label>
+			</settings>
+		</column>
+		<column name="url">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">url</label>
+			</settings>
+		</column>
+		<column name="route">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">route</label>
+			</settings>
+		</column>
+		<column name="additional_data">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">additional_data</label>
+			</settings>
+		</column>
+	</columns>
+</listing>

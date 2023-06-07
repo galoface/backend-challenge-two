@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		<add id="Infobase::top_level" title="Infobase" module="Infobase_CustomerAccess" sortOrder="9999" resource="Magento_Backend::content"/>
+		<add id="Infobase_CustomerAccess::infobase_customeraccess_customeraccess" title="CustomerAccess" module="Infobase_CustomerAccess" sortOrder="9999" resource="Magento_Backend::content" parent="Infobase::top_level" action="infobase_customeraccess/customeraccess/index"/>
+		<add id="Infobase_CustomerAccess::infobase_customeraccess_customeraccesspage" title="CustomerAccessPage" module="Infobase_CustomerAccess" sortOrder="9999" resource="Magento_Backend::content" parent="Infobase::top_level" action="infobase_customeraccess/customeraccesspage/index"/>
+	</menu>
+</config>

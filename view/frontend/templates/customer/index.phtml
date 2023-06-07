@@ -1,0 +1,30 @@
+<?php
+/** @var \Infobase\CustomerAccess\Block\Customer\Index $block */
+$customerAccess = $block->getCustomerAccessPages();
+?>
+
+<?php if (!empty($customerAccess)) : ?>
+    <div class="table-wrapper access-history">
+        <table class="data table table-access-items history" id="my-access-table">
+            <caption class="table-caption">"collum"</caption>
+            <thead>
+            <tr>
+                <th scope="col" class="col id"><?= "ID" ?></th>
+                <th scope="col" class="col date"><?= "URL" ?></th>
+                <th scope="col" class="col date"><?= "DEVICE" ?></th>
+                <th scope="col" class="col date"><?= "DATA DO ACESSO" ?></th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php foreach ($customerAccess as $item): ?>
+                <tr>
+                    <td data-th="<?= "id" ?>" class="col id"><?= $item->getId() ?></td>
+                    <td data-th="<?= "url" ?>" class="col date"><?= $item->getUrl() ?></td>
+                    <td data-th="<?= "device" ?>" class="col date"><?= $item->getDevice() ?></td>
+                    <td data-th="<?= "access_time" ?>" class="col date"><?= date("d/m/Y H:i:s", strtotime($item->getAccessTime())) ?></td>
+                </tr>
+            <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+<?php endif; ?>

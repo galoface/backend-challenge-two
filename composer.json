@@ -1,0 +1,22 @@
+{
+    "name": "infobase/module-customeraccess",
+    "description": "Module to register cutomer logs",
+    "type": "magento2-module",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "João Victor Batista",
+            "email": "profissional.joaovictorbatista@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Infobase\\CustomerAccess\\": ""
+        }
+    }
+}

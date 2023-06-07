@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="Infobase\CustomerAccess\Api\CustomerAccessRepositoryInterface" type="Infobase\CustomerAccess\Model\CustomerAccessRepository"/>
+	<preference for="Infobase\CustomerAccess\Api\Data\CustomerAccessInterface" type="Infobase\CustomerAccess\Model\CustomerAccess"/>
+	<preference for="Infobase\CustomerAccess\Api\Data\CustomerAccessSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<virtualType name="Infobase\CustomerAccess\Model\ResourceModel\CustomerAccess\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">infobase_customeraccess_customeraccess</argument>
+			<argument name="resourceModel" xsi:type="string">Infobase\CustomerAccess\Model\ResourceModel\CustomerAccess\Collection</argument>
+		</arguments>
+	</virtualType>
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="infobase_customeraccess_customeraccess_listing_data_source" xsi:type="string">Infobase\CustomerAccess\Model\ResourceModel\CustomerAccess\Grid\Collection</item>
+				<item name="infobase_customeraccess_customeraccesspage_listing_data_source" xsi:type="string">Infobase\CustomerAccess\Model\ResourceModel\CustomerAccessPage\Grid\Collection</item>
+			</argument>
+		</arguments>
+	</type>
+	<preference for="Infobase\CustomerAccess\Api\CustomerAccessPageRepositoryInterface" type="Infobase\CustomerAccess\Model\CustomerAccessPageRepository"/>
+	<preference for="Infobase\CustomerAccess\Api\Data\CustomerAccessPageInterface" type="Infobase\CustomerAccess\Model\CustomerAccessPage"/>
+	<preference for="Infobase\CustomerAccess\Api\Data\CustomerAccessPageSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<virtualType name="Infobase\CustomerAccess\Model\ResourceModel\CustomerAccessPage\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">infobase_customeraccess_customeraccesspage</argument>
+			<argument name="resourceModel" xsi:type="string">Infobase\CustomerAccess\Model\ResourceModel\CustomerAccessPage\Collection</argument>
+		</arguments>
+	</virtualType>
+	<type name="Magento\Framework\App\Action\Action">
+		<plugin name="Infobase_CustomerAccess_Plugin_Magento_Framework_App_Action" type="Infobase\CustomerAccess\Plugin\Magento\Framework\App\Action" sortOrder="10" disabled="false"/>
+	</type>
+</config>
